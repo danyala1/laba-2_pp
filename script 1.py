@@ -36,3 +36,11 @@ class Iterator1_txt:
             return self.names[self.counter - 1]
         else:
             raise StopIteration
+
+def script_1(name: str) -> None:
+    """create a csv"""
+    first_script(name)
+
+
+if __name__ == "__main__":
+    script_1("rt")
