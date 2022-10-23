@@ -8,7 +8,7 @@ def third_script(path:str) ->str:
     names = [i for i in range(10000)]
     out_directory = os.path.dirname(__file__)
     if os.path.isdir("third_dataset") == False: os.makedirs("third_dataset")
-    with open("classmates.csv", mode="w", encoding='utf-8') as w_file:
+    with open("classmates3.csv", mode="w", encoding='utf-8') as w_file:
         file_writer = csv.writer(w_file, delimiter = ",", lineterminator="\r")
         file_writer.writerow(["Абсолютный путь к файлу", "Относительный путь к файлу", "номер звезды"])
         for element in os.listdir("second_dataset"):
@@ -20,6 +20,7 @@ def third_script(path:str) ->str:
                 f.write(text)
             directory = os.path.join(out_directory, "third_dataset", str(name)+".txt")
             file_writer.writerow([directory, os.path.join("second_dataset", element), element[0]])
+
 
 def script_3(name: str) -> None:
     '''create a csv'''
