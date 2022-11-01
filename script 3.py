@@ -23,8 +23,8 @@ def third_script(path:str) ->str:
 
 
 def script_3(name: str) -> None:
-    '''create a csv'''
+    """create a csv"""
     third_script(name)
 
-if __name__=="__main__":
+if __name__ == "__main__":
     script_3("rt")

@@ -5,13 +5,13 @@ def iterator(name: str) -> Optional[str]:
     """create a csv"""
     names = os.listdir(os.path.join("dataset", name))
     for i in range(len(names)):
-        yield (names[i])  # делаем итератор
+        yield os.path.join("dataset", name, names[i])  # делаем итератор
     return None
 
 
 class Iterator_txt:
-    def __init__(self, name: str):
-        self.names = os.listdir(os.path.join("dataset", name))
+    def __init__(self, name: str, directory: str):
+        self.directories = os.path.dirname(__file__)
         self.limit = len(self.names)
         self.counter = 0
 
@@ -21,3 +21,6 @@ class Iterator_txt:
             return self.names[self.counter - 1]
         else:
             raise StopIteration
+
+for i in iterator("1"):
+    print(i)

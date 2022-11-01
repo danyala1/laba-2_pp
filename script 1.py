@@ -7,7 +7,7 @@ from tqdm import trange
 
 def first_script(path_dir: str) -> None:
     """create csv """
-    out_directory = os.path.dirname(__file__)
+    out_directory = os.path.dirname(__file__)  # внешняя директори
     with open("classmates1.csv", mode="w", encoding='utf-8') as w_file:
         file_writer = csv.writer(w_file, delimiter=",", lineterminator="\r")
         file_writer.writerow(["Абсолютный путь к файлу", "Относительный путь к файлу", "номер звезды"])
@@ -16,8 +16,6 @@ def first_script(path_dir: str) -> None:
             for dirs, folder, files in os.walk(directory):
                 for element in files:
                     file_writer.writerow([str(dirs) + "/" + element, "dataset"+'/' + str(star) + "/" + element, star])
-
-
 
 def script_1(name: str) -> None:
     """create a csv"""
